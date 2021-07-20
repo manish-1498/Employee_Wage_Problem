@@ -7,7 +7,7 @@ namespace EmployeeWageProblem
         static void Main(string[] args)
         {
             Employeecomputation Employee = new Employeecomputation();
-            Employee.dailyemployeewage();
+            Employee.monthlywage();
         }
     }
 }

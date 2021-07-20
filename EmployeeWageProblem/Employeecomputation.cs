@@ -7,33 +7,34 @@ namespace EmployeeWageProblem
     class Employeecomputation
     {
         
-        public void dailyemployeewage()
+        public void monthlywage()
         {
+            int emphours = 0;
             int wageperhour = 20;
-            int fulldayhour = 8;
-            int parttimehour = 4;
             int dailywage = 0;
             int workingdayspermonth = 20;
             int wagespermonth = 0;
-            Random random = new Random();
-            int empcheck = random.Next(0, 2);
-            switch (empcheck)
+            int totalworkinghoursinamonth = 100;
+            int totalworkingdays = 0;
+            int employeehrinmonth = 0;
+            while(employeehrinmonth<=totalworkinghoursinamonth && totalworkingdays <= workingdayspermonth)
             {
-                case 0:
-                    Console.WriteLine("Employee is present");
-                    dailywage = fulldayhour * wageperhour;
-                    wagespermonth = dailywage * workingdayspermonth;
-                    Console.WriteLine("dailywage is"+dailywage);
-                    Console.WriteLine("wages per month is" + wagespermonth);
-                    break;
-                case 1:
-                    Console.WriteLine("Employee is present and doing part time");
-                    dailywage = parttimehour * wageperhour;
-                    wagespermonth = dailywage * workingdayspermonth;
-                    Console.WriteLine("dailywage is" + dailywage);
-                    Console.WriteLine("wages per month is" + wagespermonth);
-                    break;
+                totalworkingdays++;
+                Random random = new Random();
+                int empcheck = random.Next(0, 2);
+                switch (empcheck)
+                {
+                    case 0:
+                        emphours = 8;
+                        break;
+                    case 1:
+                        emphours = 4;
+                        break;
+                }
+                employeehrinmonth = employeehrinmonth + emphours;
             }
+            wagespermonth = wageperhour * employeehrinmonth;
+            Console.WriteLine(wagespermonth);
         }
     }
 }
