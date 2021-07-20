@@ -6,24 +6,30 @@ namespace EmployeeWageProblem
 {
     class Employeecomputation
     {
+        
         public void dailyemployeewage()
         {
-            int Fulltime = 1;
             int wageperhour = 20;
             int fulldayhour = 8;
             int parttimehour = 4;
             int dailywage = 0;
             Random random = new Random();
             int empcheck = random.Next(0, 2);
-            if (empcheck == Fulltime)
+            switch (empcheck)
             {
-                dailywage = fulldayhour * wageperhour;
-                Console.WriteLine("Emloyees fulltime daily wage is" + dailywage);
-            }
-            else
-            {
-                dailywage = parttimehour * wageperhour;
-                Console.WriteLine("Employees parttime dailywage is:" + dailywage);
+                case 0:
+                    Console.WriteLine("Employee is absent");
+                    break;
+                case 1:
+                    Console.WriteLine("Employee is present");
+                    dailywage = fulldayhour * wageperhour;
+                    Console.WriteLine("dailywage is"+dailywage);
+                    break;
+                case 2:
+                    Console.WriteLine("Employee is present and doing part time");
+                    dailywage = parttimehour * wageperhour;
+                    Console.WriteLine("dailywage is" + dailywage);
+                    break;
             }
         }
     }
