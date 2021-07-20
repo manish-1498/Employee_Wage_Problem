@@ -6,9 +6,14 @@ namespace EmployeeWageProblem
 {
     class Employeecomputation
     {
-        public void start()
+        public void attendance()
         {
-            Console.WriteLine("Welcome to Employee Wage Problem");
+            Random random = new Random();
+            int empcheck = random.Next(0, 2);
+            if (empcheck == 1)
+                Console.WriteLine("Employee is present");
+            else
+                Console.WriteLine("Employee is absent");
         }
     }
 }
