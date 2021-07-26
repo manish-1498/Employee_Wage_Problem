@@ -7,17 +7,16 @@ namespace EmployeeWageProblem
     class Employeecomputation
     {
         
-        public void monthlywage()
+        public int monthlywage()
         {
             int emphours = 0;
             int wageperhour = 20;
-            int dailywage = 0;
             int workingdayspermonth = 20;
-            int wagespermonth = 0;
+            int wagespermonth;
             int totalworkinghoursinamonth = 100;
             int totalworkingdays = 0;
             int employeehrinmonth = 0;
-            while(employeehrinmonth<=totalworkinghoursinamonth && totalworkingdays <= workingdayspermonth)
+            while(employeehrinmonth<totalworkinghoursinamonth && totalworkingdays < workingdayspermonth)
             {
                 totalworkingdays++;
                 Random random = new Random();
@@ -35,6 +34,7 @@ namespace EmployeeWageProblem
             }
             wagespermonth = wageperhour * employeehrinmonth;
             Console.WriteLine(wagespermonth);
+            return wagespermonth;
         }
     }
 }
