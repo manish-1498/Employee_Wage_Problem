@@ -6,14 +6,10 @@ namespace EmployeeWageProblem
 {
     class Employeecomputation
     {
-        
-        public int monthlywage()
+        public static int Employee(string companyname,int wageperhour,int workingdayspermonth,int totalworkinghoursinamonth)
         {
             int emphours = 0;
-            int wageperhour = 20;
-            int workingdayspermonth = 20;
-            int wagespermonth;
-            int totalworkinghoursinamonth = 100;
+            int wagespermonth=0;
             int totalworkingdays = 0;
             int employeehrinmonth = 0;
             while(employeehrinmonth<totalworkinghoursinamonth && totalworkingdays < workingdayspermonth)
@@ -27,13 +23,13 @@ namespace EmployeeWageProblem
                         emphours = 8;
                         break;
                     case 1:
-                        emphours = 4;
+                        emphours = 8;
                         break;
                 }
                 employeehrinmonth = employeehrinmonth + emphours;
             }
             wagespermonth = wageperhour * employeehrinmonth;
-            Console.WriteLine(wagespermonth);
+            Console.WriteLine("Company name is "+companyname+" and total wage is "+wagespermonth);
             return wagespermonth;
         }
     }
