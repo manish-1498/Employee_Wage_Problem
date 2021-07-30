@@ -6,10 +6,10 @@ namespace EmployeeWageProblem
     {
         static void Main(string[] args)
         {
-            Employeecomputation.Employee("wipro",50,40,100);
-            Employeecomputation.Employee("Tcs", 40, 15, 75);
-            Employeecomputation.Employee("Reliance", 30, 10, 50);
-
+            EmployeeWageBuilder DMART = new EmployeeWageBuilder("DMART", 50, 40, 100);
+            EmployeeWageBuilder INFOSYS = new EmployeeWageBuilder("INFOSYS", 70, 40, 120);
+            DMART.Employeewage();
+            INFOSYS.Employeewage();
         }
     }
 }
